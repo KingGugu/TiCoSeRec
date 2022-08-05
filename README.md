@@ -34,14 +34,14 @@ tqdm == 4.59.0
   Example: If you want to use the Sports dataset ranked by variance, change the `Sports_item_var_rank.txt` into `Sports_item_rank.txt`, change the `Sports_time_var_rank.txt` into `Sports_time_rank.txt`.
 
 - Change to `src` folder and Run the following command. (The program will read the data file according to [DATA_NAME]. [Model_idx] and [GPU_ID] can be specified according to your needs)
-```
-python main.py --data_name=[DATA_NAME] --model_idx=[Model_idx] --gpu_id=[GPU_ID]
-```
+  ```
+  python main.py --data_name=[DATA_NAME] --model_idx=[Model_idx] --gpu_id=[GPU_ID]
+  ```
 
-```
-Examples:
-python main.py --data_name Sports --model_idx 1 --gpu_id 0
-```
+  ```
+  Examples:
+  python main.py --data_name Sports --model_idx 1 --gpu_id 0
+  ```
 
 - The code will output the training log, the log of each test, and the `.pt` file of each test. You can change the test frequency in `src/main.py`.
 - The meaning and usage of all other parameters have been clearly explained in `src/main.py`. You can change them as needed.
@@ -51,16 +51,16 @@ python main.py --data_name Sports --model_idx 1 --gpu_id 0
 - Change to `src` folder, Move the `.pt` file to the `src/output` folder. We give the weight file of the Spotrs dataset.
 
 - Run the following command.
-```
-python main.py --data_name=[DATA_NAME] --eval_path=[EVAL_PATH] --do_eval --gpu_id=[GPU_ID]
-```
+  ```
+  python main.py --data_name=[DATA_NAME] --eval_path=[EVAL_PATH] --do_eval --gpu_id=[GPU_ID]
+  ```
 
-```
-Examples:
-python main.py --data_name Sports --eval_path=./output/Sports.pt --do_eval --gpu_id=0
-Results:
-'HIT@5': '0.0319', 'NDCG@5': '0.0214', 'HIT@10': '0.0498', 'NDCG@10': '0.0271', 'HIT@20': '0.0752', 'NDCG@20': '0.0335'
-```
+  ```
+  Examples:
+  python main.py --data_name Sports --eval_path=./output/Sports.pt --do_eval --gpu_id=0
+  Results:
+  'HIT@5': '0.0319', 'NDCG@5': '0.0214', 'HIT@10': '0.0498', 'NDCG@10': '0.0271', 'HIT@20': '0.0752', 'NDCG@20': '0.0335'
+  ```
 
 
 # Acknowledgement
