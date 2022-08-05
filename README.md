@@ -36,7 +36,9 @@ tqdm == 4.59.0
 - Change to `src` folder and Run the following command. (The program will read the data file according to [DATA_NAME]. [Model_idx] and [GPU_ID] can be specified according to your needs)
 ```
 python main.py --data_name=[DATA_NAME] --model_idx=[Model_idx] --gpu_id=[GPU_ID]
+```
 
+```
 Examples:
 python main.py --data_name Sports --model_idx 1 --gpu_id 0
 ```
@@ -51,7 +53,9 @@ python main.py --data_name Sports --model_idx 1 --gpu_id 0
 - Run the following command.
 ```
 python main.py --data_name=[DATA_NAME] --eval_path=[EVAL_PATH] --do_eval --gpu_id=[GPU_ID]
+```
 
+```
 Examples:
 python main.py --data_name Sports --eval_path=./output/Sports.pt --do_eval --gpu_id=0
 Results:
