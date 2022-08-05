@@ -8,9 +8,13 @@ In this paper, we explore the impact of time interval on SR models. The empirica
 ## Environment
 
 Python >= 3.7
+
 torch == 1.11.0+cu113 (We haven't tested the code on the lower version of torch)
+
 numpy == 1.20.1
+
 gensim = 4.2.0
+
 tqdm == 4.59.0
 
 ## Datasets
