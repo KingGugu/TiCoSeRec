@@ -3,7 +3,6 @@ Source code for AAAI 2023 paper: [Uniform Sequence Better: Time Interval Aware D
 
 In this paper, we explore the impact of time interval on SR models. The empirical study demonstrates that user preferences can be better learned on uniform sequence than non-uniform sequence in time dimension by SR models. Based on the previous works and analysis, we propose time interval aware data augmentation methods for the sequential recommendation, including a data augmentation restriction for user sequence and five time interval aware augmentation operators.
 
-
 # Implementation
 ## Environment
 
@@ -62,13 +61,11 @@ tqdm == 4.59.0
   'HIT@5': '0.0319', 'NDCG@5': '0.0214', 'HIT@10': '0.0498', 'NDCG@10': '0.0271', 'HIT@20': '0.0752', 'NDCG@20': '0.0335'
   ```
 
-
 # Acknowledgement
  - Training pipeline is implemented based on [CoSeRec](https://github.com/YChen1993/CoSeRec).
  - SASRec model are implemented based on [BoleRec](https://github.com/RUCAIBox/RecBole). 
 
 Thanks them for providing efficient implementation.
-
 
 # Reference
 
