@@ -48,7 +48,7 @@ python main.py --data_name Sports --model_idx 1 --gpu_id 0
 
 ## Evaluate Model
 
-- Change to `src` folder, Move the `.pt` file to the `src/output` folder. We give the weight file of the Spotrs dataset (`./output/Sports.pt`).
+- Change to `src` folder, Move the `.pt` file to the `src/output` folder. We give the weight file of the Spotrs dataset.
 
 - Run the following command.
 ```
