@@ -63,7 +63,7 @@ tqdm == 4.59.0
 
 # Acknowledgement
  - Training pipeline is implemented based on [CoSeRec](https://github.com/YChen1993/CoSeRec).
- - SASRec model are implemented based on [BoleRec](https://github.com/RUCAIBox/RecBole). 
+ - SASRec model are implemented based on [RecBole](https://github.com/RUCAIBox/RecBole). 
 
 Thanks them for providing efficient implementation.
 
