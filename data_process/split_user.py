@@ -7,11 +7,11 @@ import pandas as pd
 Rank users according to the variance of each user's interaction interval. 
 Then divide the dataset by half the amount of users.
 
-The output data needs to be run in RecBole (Need to be converted to .inter file).
+The output data needs to be run in RecBole (Needs to be converted to .inter file).
 This code is used for Empirical Study.
 
 Four columns are required in the .csv file: ['user', 'item', 'rate', 'time']
-We do not use ratings information, so you can delete this column in the code and CSV file.
+We do not use ratings information, so you can delete this column in the code and .csv file.
 """
 
 
