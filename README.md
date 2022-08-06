@@ -32,7 +32,7 @@ pandas == 1.2.4
 
 - Delete in `_org` or `_var` the file name. 
   
-  Example: If you want to use the Sports dataset ranked by variance, change the `Sports_item_var_rank.txt` into `Sports_item_rank.txt`, change the `Sports_time_var_rank.txt` into `Sports_time_rank.txt`.
+  Example: If you want to use the `Sports` dataset ranked by variance, change the `Sports_item_var_rank.txt` into `Sports_item_rank.txt`, change the `Sports_time_var_rank.txt` into `Sports_time_rank.txt`.
 
 - Change to `src` folder and Run the following command. (The program will read the data file according to [DATA_NAME]. [Model_idx] and [GPU_ID] can be specified according to your needs)
   
@@ -41,7 +41,7 @@ pandas == 1.2.4
   ```
 
   ```
-  Examples:
+  Example:
   python main.py --data_name Sports --model_idx 1 --gpu_id 0
   ```
 
@@ -58,7 +58,7 @@ pandas == 1.2.4
   ```
 
   ```
-  Examples:
+  Example:
   python main.py --data_name Sports --eval_path=./output/Sports.pt --do_eval --gpu_id=0
   Results:
   'HIT@5': '0.0319', 'NDCG@5': '0.0214', 'HIT@10': '0.0498', 'NDCG@10': '0.0271', 'HIT@20': '0.0752', 'NDCG@20': '0.0335'
