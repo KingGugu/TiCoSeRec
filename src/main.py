@@ -29,7 +29,7 @@ def main():
     # system args
     parser.add_argument('--data_dir', type=str, default='../data')
     parser.add_argument('--output_dir', type=str, default='./output')
-    parser.add_argument('--data_name', type=str, default='Sports_and_Outdoors', )
+    parser.add_argument('--data_name', type=str, default='Sports', )
     parser.add_argument('--do_eval', action='store_true')
     parser.add_argument('--model_idx', type=int, default=0, help="model identifier 1,2,3,4,5,6,7...")
     parser.add_argument("--gpu_id", type=str, default="0", help="gpu_id")
@@ -56,10 +56,10 @@ def main():
     parser.add_argument('--augment_type_for_short', type=str, default='SIM',
                         help="data augmentation types for short sequences. Chosen from: \
                         SI, SIM, SIR, SIC, SIMR, SIMC, SIRC, SIMRC.")
-    parser.add_argument("--crop_rate", type=float, default=0.4, help="crop ratio for crop operator")
-    parser.add_argument("--mask_rate", type=float, default=0.7, help="mask ratio for mask operator")
-    parser.add_argument("--reorder_rate", type=float, default=0.5, help="reorder ratio for reorder operator")
-    parser.add_argument("--substitute_rate", type=float, default=0.2, help="substitute ratio for substitute operator")
+    parser.add_argument("--crop_rate", type=float, default=0.7, help="crop ratio for crop operator")
+    parser.add_argument("--mask_rate", type=float, default=0.5, help="mask ratio for mask operator")
+    parser.add_argument("--reorder_rate", type=float, default=0.2, help="reorder ratio for reorder operator")
+    parser.add_argument("--substitute_rate", type=float, default=0.1, help="substitute ratio for substitute operator")
     parser.add_argument("--insert_rate", type=float, default=0.5, help="insert ratio for insert operator")
     parser.add_argument("--max_insert_num_per_pos", type=int, default=1,
                         help="maximum insert items per position for insert operator - not studied")
@@ -75,8 +75,8 @@ def main():
                         help="number of epochs to train model without contrastive learning. "
                              "If this parameter is 0, contrastive learning will be included from the first epoch")
     parser.add_argument('--not_aug_data_mode', default='original', type=str, help="original or zero\
-                        original: for non augmented users, return the original sequence \
-                        zero: for non augmented users, return the zero sequence [0,0,,...,0,0,0]")
+                        original: for non-augmented users, return the original sequence \
+                        zero: for non-augmented users, return the zero sequence [0,0,,...,0,0,0]")
 
     # contrastive learning task args
     parser.add_argument('--temperature', type=float, default=1.0,
