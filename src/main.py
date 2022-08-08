@@ -29,7 +29,7 @@ def main():
     # system args
     parser.add_argument('--data_dir', type=str, default='../data')
     parser.add_argument('--output_dir', type=str, default='./output')
-    parser.add_argument('--data_name', type=str, default='Sports', )
+    parser.add_argument('--data_name', type=str, default='Sports')
     parser.add_argument('--do_eval', action='store_true')
     parser.add_argument('--model_idx', type=int, default=0, help="model identifier 1,2,3,4,5,6,7...")
     parser.add_argument("--gpu_id", type=str, default="0", help="gpu_id")
@@ -122,8 +122,8 @@ def main():
     args.cuda_condition = torch.cuda.is_available() and not args.no_cuda
     print("Using Cuda:", torch.cuda.is_available())
 
-    args.data_file = os.path.join(args.data_dir, args.data_name + '_item.txt')
-    args.time_file = os.path.join(args.data_dir, args.data_name + '_time.txt')
+    args.data_file = os.path.join(args.data_dir, args.data_name, args.data_name + '_item.txt')
+    args.time_file = os.path.join(args.data_dir, args.data_name, args.data_name + '_time.txt')
 
     user_seq, time_seq, max_item, valid_rating_matrix, test_rating_matrix, not_aug_users = get_user_seqs(args)
     args.item_size = max_item + 2
