@@ -20,7 +20,7 @@ pandas == 1.2.4
 
 ## Datasets
 
-- Processed Sports dataset is included in `data` folder. 
+- Processed Beauty, Sports and Home datasets are included in `data` folder. 
 
   XXX_org_rank: users will maintain the original order.
 
@@ -30,9 +30,9 @@ pandas == 1.2.4
 
 ## Train Model
 
-- Delete in `_org` or `_var` the file name. 
+- Delete `_rank_org` or `_rank_var` in the file name. 
   
-  Example: If you want to use the Sports dataset ranked by variance, change the `Sports_item_var_rank.txt` into `Sports_item_rank.txt`, change the `Sports_time_var_rank.txt` into `Sports_time_rank.txt`.
+  Example: If you want to use the Sports dataset ranked by variance, change the `Sports_item_var_rank.txt` into `Sports_item.txt`, change the `Sports_time_var_rank.txt` into `Sports_time.txt`.
 
 - Change to `src` folder and Run the following command. (The program will read the data file according to [DATA_NAME]. [Model_idx] and [GPU_ID] can be specified according to your needs)
   
@@ -42,15 +42,26 @@ pandas == 1.2.4
 
   ```
   Example:
-  python main.py --data_name Sports --model_idx 1 --gpu_id 0
+  python main.py --data_name=Sports --model_idx=1 --gpu_id=0
+  python main.py --data_name=Beauty --model_idx=1 --mask_mode=maximum --gpu_id=0
+  python main.py --data_name=Home --model_idx=1 --mask_mode=random --reorder_rate=0.4 --mask_rate=0.6 --patience=75 --gpu_id=0 
   ```
 
 - The code will output the training log, the log of each test, and the `.pt` file of each test. You can change the test frequency in `src/main.py`.
 - The meaning and usage of all other parameters have been clearly explained in `src/main.py`. You can change them as needed.
 
+## Hyper-parameter Fine-Tuning
+If you use your own dataset, we give some suggestions and ranges for fine-tuning of Hyper-parameters.
+- augment_threshold: it needs to be adjusted according to the dataset. 
+- augment_type_for_short: generally, `SIM` is better. You can try other operator combinations
+- ratio/rate for data augmentation operators: range `[0.1,0.9]` and interval `0.1` or `0.2`.
+- mode for data augmentation operators: `maximum` or `minimum`. for mask, you can also try `random`
+- var_rank_not_aug_ratio: range `[0.1,0.5]` and interval `0.1` or `0.05`.
+- attn_dropout_prob and hidden_dropout_prob : range `[0.2,0.5]`
+
 ## Evaluate Model
 
-- Change to `src` folder, Move the `.pt` file to the `src/output` folder. We give the weight file of the Spotrs dataset.
+- Change to `src` folder, Move the `.pt` file to the `src/output` folder. We give the weight file of the Beauty, Sports and Home dataset.
 
 - Run the following command.
   ```
@@ -59,9 +70,15 @@ pandas == 1.2.4
 
   ```
   Example:
-  python main.py --data_name Sports --eval_path=./output/Sports.pt --do_eval --gpu_id=0
-  Results:
-  'HIT@5': '0.0319', 'NDCG@5': '0.0214', 'HIT@10': '0.0498', 'NDCG@10': '0.0271', 'HIT@20': '0.0752', 'NDCG@20': '0.0335'
+  python main.py --data_name=Beauty --eval_path=./output/Beauty.pt --do_eval --gpu_id=0
+  python main.py --data_name=Sports --eval_path=./output/Sports.pt --do_eval --gpu_id=0
+  python main.py --data_name=Home --eval_path=./output/Home.pt --do_eval --gpu_id=0
+  Beauty Results:
+  {'stage': 'test', 'epoch': 0, 'HIT@5': '0.0504', 'NDCG@5': '0.0343', 'HIT@10': '0.0740', 'NDCG@10': '0.0418', 'HIT@20': '0.1068', 'NDCG@20': '0.0501'}
+  Sports Results:
+  {'stage': 'test', 'epoch': 0, 'HIT@5': '0.0338', 'NDCG@5': '0.0227', 'HIT@10': '0.0505', 'NDCG@10': '0.0281', 'HIT@20': '0.0751', 'NDCG@20': '0.0343'}
+  Home Results:
+  {'stage': 'test', 'epoch': 0, 'HIT@5': '0.0181', 'NDCG@5': '0.0130', 'HIT@10': '0.0261', 'NDCG@10': '0.0155', 'HIT@20': '0.0368', 'NDCG@20': '0.0182'}
   ```
 
 # Acknowledgement

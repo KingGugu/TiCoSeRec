@@ -7,7 +7,7 @@ import tqdm
 Generate txt data files for training TiCoSeRec.
 
 Four columns are required in the .csv file: ['user', 'item', 'rate', 'time']
-We do not use ratings information, so you can delete this column in the code and CSV file.
+We do not use ratings information, so you can delete this column in the code and .csv file.
 
 rank_type should be selected between var and org
 var: users will be ranked by the variance of the interaction interval.
