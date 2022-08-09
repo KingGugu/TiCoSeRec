@@ -100,17 +100,17 @@ class OnlineItemSimilarity:
         self.device = torch.device("cuda" if self.cuda_condition else "cpu")
         self.total_item_list = torch.tensor([i for i in range(self.item_size)],
                                             dtype=torch.long).to(self.device)
-        self.max_score, self.min_score = self.get_maximum_minimum_sim_scores()
 
     def update_embedding_matrix(self, item_embedding):
         self.item_embedding = copy.deepcopy(item_embedding)
         self.base_embedding_matrix = self.item_embedding(self.total_item_list)
+        self.max_score, self.min_score = self.get_maximum_minimum_sim_scores()
 
     def get_maximum_minimum_sim_scores(self):
         max_score, min_score = -1, 100
         for item_idx in range(1, self.item_size):
             try:
-                item_vector = self.item_embedding(item_idx).view(-1, 1)
+                item_vector = self.item_embedding(torch.tensor(item_idx).to(self.device)).view(-1, 1)
                 item_similarity = torch.mm(self.base_embedding_matrix, item_vector).view(-1)
                 max_score = max(torch.max(item_similarity), max_score)
                 min_score = min(torch.min(item_similarity), min_score)
