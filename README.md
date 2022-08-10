@@ -44,7 +44,7 @@ pandas == 1.2.4
   Example:
   python main.py --data_name=Sports --model_idx=1 --substitute_rate=0.2 --gpu_id=0
   python main.py --data_name=Beauty --model_idx=1 --mask_mode=maximum --gpu_id=0
-  python main.py --data_name=Home --model_idx=1 --mask_mode=random --reorder_rate=0.4 --mask_rate=0.6 --patience=75 --gpu_id=0 
+  python main.py --data_name=Home --model_idx=1 --mask_mode=random --reorder_rate=0.4 --mask_rate=0.6 --substitute_rate=0.2 --patience=75 --gpu_id=0 
   ```
 
 - The code will output the training log, the log of each test, and the `.pt` file of each test. You can change the test frequency in `src/main.py`.
