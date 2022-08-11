@@ -42,9 +42,9 @@ pandas == 1.2.4
 
   ```
   Example:
-  python main.py --data_name=Beauty --model_idx=1 --mask_mode=maximum --gpu_id=0
-  python main.py --data_name=Sports --model_idx=1 --substitute_rate=0.2 --weight_decay=1e-5 --gpu_id=0
-  python main.py --data_name=Home --model_idx=1 --mask_mode=random --reorder_rate=0.4 --mask_rate=0.6 --substitute_rate=0.2 --patience=50 --weight_decay=1e-7 --gpu_id=0 
+  python main.py --data_name=Beauty --model_idx=1 --mask_mode=maximum --substitute_rate=0.2 --crop_rate=0.4 --mask_rate=0.7 --reorder_rate=0.5 --gpu_id=0
+  python main.py --data_name=Sports --model_idx=1 --substitute_rate=0.2 --weight_decay=1e-5 --patience=100 --gpu_id=0
+  python main.py --data_name=Home --model_idx=1 --mask_mode=random --reorder_rate=0.4 --mask_rate=0.6 --patience=50 --weight_decay=1e-7 --gpu_id=0 
   ```
 
 - The code will output the training log, the log of each test, and the `.pt` file of each test. You can change the test frequency in `src/main.py`.
@@ -77,7 +77,7 @@ If you use your own dataset, we give some suggestions and ranges for fine-tuning
   Beauty Results:
   {'stage': 'test', 'epoch': 0, 'HIT@5': '0.0504', 'NDCG@5': '0.0343', 'HIT@10': '0.0740', 'NDCG@10': '0.0418', 'HIT@20': '0.1068', 'NDCG@20': '0.0501'}
   Sports Results:
-  {'stage': 'test', 'epoch': 0, 'HIT@5': '0.0338', 'NDCG@5': '0.0227', 'HIT@10': '0.0505', 'NDCG@10': '0.0281', 'HIT@20': '0.0751', 'NDCG@20': '0.0343'}
+  {'stage': 'test', 'epoch': 0, 'HIT@5': '0.0334', 'NDCG@5': '0.0227', 'HIT@10': '0.0514', 'NDCG@10': '0.0284', 'HIT@20': '0.0768', 'NDCG@20': '0.0348'}
   Home Results:
   {'stage': 'test', 'epoch': 0, 'HIT@5': '0.0182', 'NDCG@5': '0.0127', 'HIT@10': '0.0266', 'NDCG@10': '0.0154', 'HIT@20': '0.0390', 'NDCG@20': '0.0185'}
   ```

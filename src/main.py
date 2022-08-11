@@ -86,7 +86,7 @@ def main():
 
     # model args
     parser.add_argument("--model_name", default='TiCoSeRec', type=str)
-    parser.add_argument("--hidden_size", type=int, default=128, help="the input and output hidden size")
+    parser.add_argument("--hidden_size", type=int, default=128, help="the input and output hidden size (embedding size)")
     parser.add_argument("--n_layers", type=int, default=2, help="number of layers")
     parser.add_argument('--n_heads', type=int, default=2, help="number of heads")
     parser.add_argument('--inner_size', type=int, default=256, help='the dimensionality in feed-forward layer')
