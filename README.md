@@ -55,7 +55,7 @@ If you use your own dataset, we give some suggestions and ranges for fine-tuning
 - augment_threshold: it needs to be adjusted according to the dataset. 
 - augment_type_for_short: generally, `SIM` is better. You can try other operator combinations
 - ratio/rate for data augmentation operators: range `[0.1,0.9]` and interval `0.1` or `0.2`.
-- mode for data augmentation operators: `maximum` or `minimum`. for mask, you can also try `random`
+- mode for data augmentation operators: `maximum` or `minimum`. For mask, you can also try `random`
 - var_rank_not_aug_ratio: range `[0.1,0.5]` and interval `0.1` or `0.05`.
 - attn_dropout_prob and hidden_dropout_prob : range `[0.2,0.5]`
 - weight_decay : range `[1e-4,1e-8]`
