@@ -42,7 +42,7 @@ pandas == 1.2.4
 
   ```
   Example:
-  python main.py --data_name=Beauty --model_idx=1 --mask_mode=maximum --substitute_rate=0.2 --crop_rate=0.4 --mask_rate=0.7 --reorder_rate=0.5 --gpu_id=0
+  python main.py --data_name=Beauty --model_idx=1 --augmentation_warm_up_epochs=350 --mask_mode=maximum --substitute_rate=0.2 --crop_rate=0.4 --mask_rate=0.7 --reorder_rate=0.5 --gpu_id=0
   python main.py --data_name=Sports --model_idx=1 --substitute_rate=0.2 --weight_decay=1e-5 --patience=100 --gpu_id=0
   python main.py --data_name=Home --model_idx=1 --mask_mode=random --reorder_rate=0.4 --mask_rate=0.6 --patience=50 --weight_decay=1e-7 --gpu_id=0 
   ```
