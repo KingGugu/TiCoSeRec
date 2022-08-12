@@ -20,7 +20,7 @@ def show_args_info(args):
         for arg in vars(args):
             info = f"{arg:<30} : {getattr(args, arg):>35}"
             print(info)
-            f.write(info+'\n')
+            f.write(info + '\n')
 
 
 def main():
@@ -63,10 +63,14 @@ def main():
     parser.add_argument("--insert_rate", type=float, default=0.5, help="insert ratio for insert operator")
     parser.add_argument("--max_insert_num_per_pos", type=int, default=1,
                         help="maximum insert items per position for insert operator - not studied")
-    parser.add_argument('--insert_mode', default='maximum', type=str, help="minimum or maximum")
-    parser.add_argument('--crop_mode', default='minimum', type=str, help="minimum or maximum")
-    parser.add_argument('--substitute_mode', default='minimum', type=str, help="minimum or maximum")
-    parser.add_argument('--reorder_mode', default='minimum', type=str, help="minimum or maximum")
+    parser.add_argument('--insert_mode', default='maximum', type=str,
+                        help="minimum or maximum, maximum is the Ti-Insert in paper, minimum is the worst.")
+    parser.add_argument('--crop_mode', default='minimum', type=str,
+                        help="minimum or maximum, minimum is the Ti-Crop in paper, maximum is the worst.")
+    parser.add_argument('--substitute_mode', default='minimum', type=str,
+                        help="minimum or maximum, minimum is the Ti-Substitute in paper, maximum is the worst.")
+    parser.add_argument('--reorder_mode', default='minimum', type=str,
+                        help="minimum or maximum, minimum is the Ti-Reorder in paper, maximum is the worst.")
     parser.add_argument('--mask_mode', default='random', type=str, help="minimum, maximum or random")
     parser.add_argument("--var_rank_not_aug_ratio", type=float, default=0.15,
                         help="Using the data ranked by time interval variance, \
@@ -86,7 +90,8 @@ def main():
 
     # model args
     parser.add_argument("--model_name", default='TiCoSeRec', type=str)
-    parser.add_argument("--hidden_size", type=int, default=128, help="the input and output hidden size (embedding size)")
+    parser.add_argument("--hidden_size", type=int, default=128,
+                        help="the input and output hidden size (embedding size)")
     parser.add_argument("--n_layers", type=int, default=2, help="number of layers")
     parser.add_argument('--n_heads', type=int, default=2, help="number of heads")
     parser.add_argument('--inner_size', type=int, default=256, help='the dimensionality in feed-forward layer')
@@ -192,11 +197,11 @@ def main():
             if early_stopping.early_stop:
                 print("Early stopping")
                 break
-            if (epoch+1) % args.test_frequency == 0:
+            if (epoch + 1) % args.test_frequency == 0:
                 print('---------------Change to test_rating_matrix!-------------------')
                 trainer.args.train_matrix = test_rating_matrix
                 scores, result_info = trainer.test(epoch, full_sort=True)
-                save_path = os.path.join(args.checkpoint_path, 'epoch-'+str(epoch)+'.pt')
+                save_path = os.path.join(args.checkpoint_path, 'epoch-' + str(epoch) + '.pt')
                 torch.save(trainer.model.state_dict(), save_path)
                 args.train_matrix = valid_rating_matrix
 
