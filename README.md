@@ -52,11 +52,11 @@ pandas == 1.2.4
 ## Hyper-parameter Fine-Tuning
 If you use your own dataset, we give some suggestions and ranges for fine-tuning of Hyper-parameters.
 - augment_threshold: it needs to be adjusted according to the dataset. 
-- augment_type_for_short: generally, `SIM` is better. You can try other operator combinations
-- ratio/rate for data augmentation operators: range `[0.1,0.9]` and interval `0.1` or `0.2`.
-- var_rank_not_aug_ratio: range `[0.1,0.5]` and interval `0.1` or `0.05`.
-- attn_dropout_prob and hidden_dropout_prob : range `[0.2,0.5]`
-- weight_decay : range `[1e-4,1e-8]`
+- augment_type_for_short: generally, `SIM` is better. You can try other operator combinations.
+- ratio/rate for data augmentation operators: range `[0.1,0.9]` step by `0.1` or `0.2`.
+- var_rank_not_aug_ratio: range `[0.1,0.5]` step by `0.1` or `0.05`.
+- attn_dropout_prob and hidden_dropout_prob : range `[0.2,0.5]` step by `0.1`.
+- weight_decay : range `[1e-4,1e-8]`.
 
 ## Evaluate Model
 
