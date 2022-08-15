@@ -89,7 +89,6 @@ Thanks them for providing efficient implementation.
 # Reference
 
 Please cite our paper if you use this code.
-
 ```
 latex bib reference
 ```
