@@ -127,7 +127,7 @@ class RecWithContrastiveLearningDataset(Dataset):
         user_id = index
         items = self.user_seq[index]
         times = self.time_seq[index]
-        input_times = times[:-2]
+        input_times = times[:-3]
 
         self.total_train_users += 1
 
