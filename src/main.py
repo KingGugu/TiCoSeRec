@@ -187,7 +187,7 @@ def main():
         scores, result_info = trainer.test(0, full_sort=True)
 
     else:
-        print(f'Train CoSeRec')
+        print(f'Train TiCoSeRec')
         early_stopping = EarlyStopping(args.checkpoint_path, patience=args.patience, verbose=True)
         for epoch in range(args.epochs):
             trainer.train(epoch)
