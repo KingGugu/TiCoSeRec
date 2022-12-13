@@ -19,7 +19,7 @@ pandas == 1.2.4
 
 ## Datasets
 
-- Processed Beauty, Sports and Home datasets are included in `data` folder. 
+- Processed Beauty, Sports and Home and two different version of Yelp datasets are included in `data` folder. 
 
   XXX_org_rank: users will maintain the original order.
 
@@ -27,6 +27,9 @@ pandas == 1.2.4
 
 - You can use the code in `data_process` folder to process your own dataset, and we explained its role at beginning of each code file.
 
+- For Yelp dataset, we give two processed datasets from two different versions of Yelp.
+  Yelp-A is processed from Yelp2020, which has 316,354 interactions. 
+  Yelp-B is processed from Yelp2022, which has 207,045 interactions.
 ## Train Model
 
 - Delete `_rank_org` or `_rank_var` in the file name. 
