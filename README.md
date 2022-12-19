@@ -1,5 +1,5 @@
 # TiCoSeRec
-Official source code for AAAI 2023 paper: [Uniform Sequence Better: Time Interval Aware Data Augmentation for Sequential Recommendation]()
+Official source code for AAAI 2023 paper: [Uniform Sequence Better: Time Interval Aware Data Augmentation for Sequential Recommendation](https://arxiv.org/abs/2212.08262)
 
 In this paper, we explored the impact of time interval on sequential recommendations. Our basic idea is that uniform sequences are more valuable for next-item prediction. This assumption was validated by an empirical study. Then, we proposed five data operators to augment item sequences in the light of time intervals. Our experiments on four public datasets have verified the effectiveness of our proposed operators for data augmentation. To the authors' best knowledge, this is the first work to study the distribution of time interval for the sequential recommendation. For future work, we intend to further consider the factor of item category for data augmentation, and how time interval and item category can be leveraged together for better performance. 
 # Implementation
