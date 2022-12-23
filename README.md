@@ -91,5 +91,10 @@ Thanks them for providing efficient implementation.
 
 Please cite our paper if you use this code.
 ```
-latex bib reference
+@article{dang2022uniform,
+  title={Uniform Sequence Better: Time Interval Aware Data Augmentation for Sequential Recommendation},
+  author={Dang, Yizhou and Yang, Enneng and Guo, Guibing and Jiang, Linying and Wang, Xingwei and Xu, Xiaoxiao and Sun, Qinghui and Liu, Hong},
+  journal={arXiv preprint arXiv:2212.08262},
+  year={2022}
+}
 ```
