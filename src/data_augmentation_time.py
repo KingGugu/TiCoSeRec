@@ -182,7 +182,7 @@ class Insert(object):
         diff_sorted = diff_sorted.tolist()
         insert_idx = []
         for i in range(insert_nums):
-            temp = diff_sorted.index(i)
+            temp = diff_sorted[i]
             insert_idx.append(temp)
 
         """
@@ -255,7 +255,7 @@ class Substitute(object):
         diff_sorted = diff_sorted.tolist()
         substitute_idx = []
         for i in range(substitute_nums):
-            temp = diff_sorted.index(i)
+            temp = diff_sorted[i]
             substitute_idx.append(temp)
 
         for index in substitute_idx:
@@ -362,7 +362,7 @@ class Mask(object):
         diff_sorted = diff_sorted.tolist()
         mask_idx = []
         for i in range(mask_nums):
-            temp = diff_sorted.index(i)
+            temp = diff_sorted[i]
             mask_idx.append(temp)
 
         for idx, mask_value in zip(mask_idx, mask):
