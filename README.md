@@ -91,10 +91,13 @@ Thanks them for providing efficient implementation.
 
 Please cite our paper if you use this code.
 ```
-@article{dang2022uniform,
-  title={Uniform Sequence Better: Time Interval Aware Data Augmentation for Sequential Recommendation},
+@inproceedings{dang2023uniform,
+  title={Uniform sequence better: Time interval aware data augmentation for sequential recommendation},
   author={Dang, Yizhou and Yang, Enneng and Guo, Guibing and Jiang, Linying and Wang, Xingwei and Xu, Xiaoxiao and Sun, Qinghui and Liu, Hong},
-  journal={arXiv preprint arXiv:2212.08262},
-  year={2022}
+  booktitle={Proceedings of the AAAI conference on artificial intelligence},
+  volume={37},
+  number={4},
+  pages={4225--4232},
+  year={2023}
 }
 ```
